@@ -1,0 +1,33 @@
+sa:
+    A ilk ikiyi yer değiştir.
+
+sb:
+    B ilk ikiyi yer değiştir.
+
+ss:
+    sa ve sb yi aynı anda uygula.
+
+pa:
+    B başı A başına koy.
+
+pb:
+    A başı B başına koy.
+
+ra:
+    A tümü 1 sona kaydır. A son -> A baş olur.
+
+rb:
+    B tümü 1 sona kaydır. B son -> B baş olur.
+
+rr:
+    ra ve rb yi aynı anda uygula.
+
+rra:
+    ra ters.
+
+rrb:
+    rb ters.
+
+rrr:
+    rra ve rrb yi aynı anda uygula.
+

@@ -6,7 +6,7 @@
 /*   By: ali <ali@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/10 21:31:50 by ali               #+#    #+#             */
-/*   Updated: 2023/02/10 21:41:48 by ali              ###   ########.fr       */
+/*   Updated: 2023/02/11 11:38:25 by ali              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int character_check(int argc, char **argv)
     int i = 0;
     while (!check_characters(&argv[++i]))
     {
-        writemy("Error: Some chars is not integers.\n");
+        writemy("Error: Some arguments is not integers.\n");
         return 0;
     }
     return 1;

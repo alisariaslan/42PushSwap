@@ -6,23 +6,30 @@
 /*   By: ali <ali@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/10 21:33:08 by ali               #+#    #+#             */
-/*   Updated: 2023/02/10 21:38:38 by ali              ###   ########.fr       */
+/*   Updated: 2023/02/11 11:39:04 by ali              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-int size_check(int argc,char **argv)
+int size_check(int argc, char **argv)
 {
-    int i = 0;
+
+    int i = 1;
     while (argc--)
     {
-        long long value = matoi(argv[i]);
-        if (value > 2147483647 || value < -2147483648)
+        if (matoi(argv[i]) > 2147483647)
         {
             writemy("Error: Some values bigger than integers.\n");
             return 0;
         }
+        if (matoi(argv[i]) < -2147483648)
+        {
+            writemy("Error: Some values smaller than integers.\n");
+            return 0;
+        }
+        int value = matoi(argv[i]);
+        //printf("%d\n", value);
         i++;
     }
     return 1;

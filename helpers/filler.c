@@ -1,34 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   matoi.c                                            :+:      :+:    :+:   */
+/*   filler.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ali <ali@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/10 21:10:42 by ali               #+#    #+#             */
-/*   Updated: 2023/02/11 11:32:34 by ali              ###   ########.fr       */
+/*   Created: 2023/02/10 23:56:09 by ali               #+#    #+#             */
+/*   Updated: 2023/02/11 11:51:31 by ali              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-long long matoi(char *arg)
+int *fill_stack(int argc, char **argv)
 {
+    int *stack = (int *)malloc(sizeof(int) * argc );
     int i = 0;
-    while (arg[++i])
-        ;
-    i--;
-    long long total = 0;
-    long long stair = 1;
-    while (arg[i] > 47 && arg[i] < 58)
+    while (argv[i])
     {
-        int n = arg[i--] - 48;
-        total += n * stair;
-        stair *= 10;
+        stack[i] = matoi(argv[i]);
+        //printf("%d, %s\n",stack[i],argv[i]);
+        i++;
     }
-    if (arg[0] == '-')
-        total *= -1;
+    return stack;
+}
 
-    //printf("matoied: %llu\n",total);
-    return total;
+int *fill_empty(int argc)
+{
+    int *stack = (int *)malloc(sizeof(int) * argc);
+    return stack;
 }

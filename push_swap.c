@@ -6,52 +6,31 @@
 /*   By: ali <ali@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/10 21:16:29 by ali               #+#    #+#             */
-/*   Updated: 2023/02/10 21:42:37 by ali              ###   ########.fr       */
+/*   Updated: 2023/02/12 21:47:04 by ali              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-
-void writestack(int *stack)
-{
-}
-
-void sa(int *stack_a)
-{
-}
-
 int main(int argc, char **argv)
 {
-    int i;
+    int *a;
+    int *b;
 
-    i = 0;
-    if(!count_check(argc) || !character_check(argc,argv) || !size_check(argc-1,argv))
+    if (!count_check(argc) || !character_check(argc, argv) || !size_check(argc - 1, argv))
         return 0;
 
-   
-   
+    a = fill_stack(argc - 1, argv + 1);
+    b = fill_empty(argc - 1);
 
-    int a_stack[argc - 1];
-    int b_stack[argc - 1];
-
-    int tc = argc - 1;
-    i = 1;
-    while (tc--)
-    {
-        long long value = matoi(argv[i]);
-        a_stack[i - 1] = value;
-        i++;
-    }
-
+    stackwrite(a, b, argc - 1, 1);
     /*
-    while (*argv)
-    {
-        printf("%s\n", *argv);
-        //a[i] = matoi(*argv);
-        i++;
-        argv++;
-    }
+        int i = 0;
+        while (argv[i + 1])
+            printf("a: %d\n", a[i++]);
+        i = 0;
+        while (argv[i + 1])
+            printf("b: %d\n", b[i++]);
     */
 
     return 0;

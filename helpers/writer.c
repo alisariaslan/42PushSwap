@@ -6,48 +6,59 @@
 /*   By: ali <ali@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/10 21:16:29 by ali               #+#    #+#             */
-/*   Updated: 2023/02/12 21:47:06 by ali              ###   ########.fr       */
+/*   Updated: 2023/02/14 00:48:28 by ali              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void writemy(char *s)
+void	writechar(char c)
 {
-    int i = 0;
-    while (s[i])
-        i++;
-    write(1, s, i);
+	write(1, &c, 1);
 }
 
-static char *getspaces(long long val, char *spaces)
+void	writemy(char *s)
 {
-    int i = 10;
+	int	i;
 
-    if (val < 0)
-        val *= -10;
-    while (val > 0)
-    {
-        val /= 10;
-        spaces[i] = 0;
-        i--;
-    }
-    return spaces;
+	i = 0;
+	while (s[i])
+		i++;
+	write(1, s, i);
 }
 
-void stackwrite(int *a, int *b, int size, int count)
+static char	*getspaces(long long val, char *spaces)
 {
-    int i = 0;
-    int s = size;
-    char spaces[11] = "           ";
+	int	i;
 
-    printf("\n%d.\n", count);
-    printf("____________  ____________\n");
-    while (s--)
-    {
-        printf("%d%s | |%d\n", a[i], getspaces(a[i], spaces), b[i]);
-        i++;
-    }
-    printf("____________| |____________");
-    printf("\n(a)            (b)\n");
+	i = 10;
+	if (val < 0)
+		val *= -10;
+	while (val > 0)
+	{
+		val /= 10;
+		spaces[i] = 0;
+		i--;
+	}
+	return (spaces);
+}
+
+void	stackwrite(int *a, int *b, int size, int count)
+{
+	int		i;
+	int		s;
+	char	*spaces;
+
+	i = 0;
+	s = size - 1;
+	spaces = fill_chars('.', 11);
+	mrintf("\n%d.\n", 1);
+	mrintf("____________  ____________\n");
+	while (s--)
+	{
+		mrintf("%d%s | |%d\n", a[i], getspaces(a[i], spaces), b[i]);
+		i++;
+	}
+	mrintf("____________| |____________");
+	mrintf("\n(a)            (b)\n");
 }

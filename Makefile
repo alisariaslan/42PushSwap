@@ -18,4 +18,8 @@ d:
 	./$(PROGRAM) 1 -12 -24 -435 123433
 w:
 	make
-	./$(PROGRAM) 1 -12 -24 -435
+	./$(PROGRAM) 1 -12 -24 -435 -
+
+n:
+	clear
+	norminette

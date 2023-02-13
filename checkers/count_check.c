@@ -6,18 +6,18 @@
 /*   By: ali <ali@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/10 21:33:08 by ali               #+#    #+#             */
-/*   Updated: 2023/02/10 21:37:04 by ali              ###   ########.fr       */
+/*   Updated: 2023/02/14 00:09:25 by ali              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-int count_check(int argc)
+int	count_check(int argc)
 {
-    if (argc < 3)
-    {
-        writemy("Error: Not enough arguments.\n");
-        return 0;
-    }
-    return 1;
+	if (argc < 3)
+	{
+		writemy("Error: Not enough arguments.\n");
+		return (0);
+	}
+	return (1);
 }

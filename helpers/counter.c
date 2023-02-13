@@ -1,38 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   size_check.c                                       :+:      :+:    :+:   */
+/*   counter.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ali <ali@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/10 21:33:08 by ali               #+#    #+#             */
-/*   Updated: 2023/02/14 00:38:07 by ali              ###   ########.fr       */
+/*   Created: 2023/02/13 21:57:16 by ali               #+#    #+#             */
+/*   Updated: 2023/02/14 00:48:09 by ali              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-int	size_check(int argc, char **argv)
+t_ull	char_counter(char *chars)
 {
-	int	i;
-	int	value;
+	t_ull	i;
 
-	i = 1;
-	argc--;
-	while (argc--)
+	i = 0;
+	while (chars[i])
 	{
-		if (matoi(argv[i]) > 2147483647)
-		{
-			writemy("Error: Some values bigger than integers.\n");
-			return (0);
-		}
-		if (matoi(argv[i]) < -2147483648)
-		{
-			writemy("Error: Some values smaller than integers.\n");
-			return (0);
-		}
-		value = matoi(argv[i]);
 		i++;
 	}
-	return (1);
+	return (i);
+}
+
+t_ull	step_counter(t_ull n)
+{
+	t_ull	steps;
+
+	steps = 1;
+	while (n > 10)
+	{
+		n /= 10;
+		steps++;
+	}
+	return (steps);
 }

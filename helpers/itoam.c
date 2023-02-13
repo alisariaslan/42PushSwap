@@ -1,38 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   size_check.c                                       :+:      :+:    :+:   */
+/*   itoam.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ali <ali@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/10 21:33:08 by ali               #+#    #+#             */
-/*   Updated: 2023/02/14 00:38:07 by ali              ###   ########.fr       */
+/*   Created: 2023/02/13 21:54:59 by ali               #+#    #+#             */
+/*   Updated: 2023/02/14 00:47:11 by ali              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-int	size_check(int argc, char **argv)
+char	*itoam(long long n)
 {
-	int	i;
-	int	value;
+	int		malsize;
+	t_ull	steps;
+	char	*new;
 
-	i = 1;
-	argc--;
-	while (argc--)
+	malsize = 1;
+	if (n < 0)
 	{
-		if (matoi(argv[i]) > 2147483647)
-		{
-			writemy("Error: Some values bigger than integers.\n");
-			return (0);
-		}
-		if (matoi(argv[i]) < -2147483648)
-		{
-			writemy("Error: Some values smaller than integers.\n");
-			return (0);
-		}
-		value = matoi(argv[i]);
-		i++;
+		n *= -1;
+		malsize++;
 	}
-	return (1);
+	steps = step_counter(n);
+	if (malsize == 2)
+		steps++;
+	new = malloc(sizeof(char) * steps + malsize);
+	new[steps--] = 0;
+	if (malsize == 2)
+		new[0] = '-';
+	while (n > 10)
+	{
+		new[steps--] = n % 10 + 48;
+		n /= 10;
+	}
+	new[steps--] = n % 10 + 48;
+	return (new);
 }

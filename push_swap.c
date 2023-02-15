@@ -16,12 +16,16 @@ int	main(int argc, char **argv)
 {
 	int	*a;
 	int	*b;
+	int	show_moves;
 
+	show_moves = 0;
 	if (!count_check(argc) || !character_check(argc, argv) || !size_check(argc,
 			argv))
 		return (0);
 	a = fill_stack(argc, argv);
 	b = fill_empty(argc);
 	stackwrite(a, b, argc, 1);
+	sa(a, show_moves);
+	stackwrite(a, b, argc, 2);
 	return (0);
 }

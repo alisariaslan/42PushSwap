@@ -6,7 +6,7 @@
 /*   By: ali <ali@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/10 21:16:29 by ali               #+#    #+#             */
-/*   Updated: 2023/02/14 00:48:28 by ali              ###   ########.fr       */
+/*   Updated: 2023/02/15 23:20:22 by ali              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,19 +27,25 @@ void	writemy(char *s)
 	write(1, s, i);
 }
 
-static char	*getspaces(long long val, char *spaces)
+static char	*getspaces(int val, char *spaces)
 {
-	int	i;
+	t_ull	count;
+	int		steps;
+	int		total;
+	int		i;
 
-	i = 10;
+	count = char_counter(spaces);
 	if (val < 0)
 		val *= -10;
-	while (val > 0)
+	steps = step_counter(val);
+	total = count - steps;
+	i = 0;
+	while (i < total)
 	{
-		val /= 10;
-		spaces[i] = 0;
-		i--;
+		spaces[i] = '.';
+		i++;
 	}
+	spaces[i] = 0;
 	return (spaces);
 }
 
@@ -51,14 +57,15 @@ void	stackwrite(int *a, int *b, int size, int count)
 
 	i = 0;
 	s = size - 1;
-	spaces = fill_chars('.', 11);
-	mrintf("\n%d.\n", 1);
+	mrintf("\n%d.\n", count);
 	mrintf("____________  ____________\n");
 	while (s--)
 	{
+		spaces = fill_chars('.', 12);
 		mrintf("%d%s | |%d\n", a[i], getspaces(a[i], spaces), b[i]);
 		i++;
 	}
+	free(spaces);
 	mrintf("____________| |____________");
 	mrintf("\n(a)            (b)\n");
 }

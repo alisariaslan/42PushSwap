@@ -6,7 +6,7 @@
 /*   By: ali <ali@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/10 23:56:09 by ali               #+#    #+#             */
-/*   Updated: 2023/02/14 00:39:21 by ali              ###   ########.fr       */
+/*   Updated: 2023/02/15 23:21:00 by ali              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,11 +45,11 @@ char	*fill_chars(char c, t_ull size)
 
 	i = 0;
 	filled = malloc(sizeof(char) * size + 1);
-	filled[size] = 0;
 	while (i < size)
 	{
 		filled[i] = c;
 		i++;
 	}
+	filled[size - 1] = 0;
 	return (filled);
 }

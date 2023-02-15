@@ -1,40 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   counter.c                                          :+:      :+:    :+:   */
+/*   sx.c                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ali <ali@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/13 21:57:16 by ali               #+#    #+#             */
-/*   Updated: 2023/02/15 23:21:12 by ali              ###   ########.fr       */
+/*   Created: 2023/02/15 23:27:00 by ali               #+#    #+#             */
+/*   Updated: 2023/02/15 23:31:36 by ali              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-t_ull	char_counter(char *chars)
+void	sa(int *a, int show_moves)
 {
-	t_ull	i;
+	int	temp;
 
-	i = 0;
-	while (chars[i])
-	{
-		i++;
-	}
-	return (i);
-}
-
-t_ll	step_counter(t_ll n)
-{
-	t_ll	steps;
-
-	steps = 1;
-	if (n < 0)
-		n *= -1;
-	while (n > 10)
-	{
-		n /= 10;
-		steps++;
-	}
-	return (steps);
+	temp = a[0];
+	a[0] = a[1];
+	a[1] = temp;
+	if (show_moves)
+		mrintf("sa\n");
 }

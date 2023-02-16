@@ -6,7 +6,7 @@
 /*   By: msariasl <msariasl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 17:29:37 by msariasl          #+#    #+#             */
-/*   Updated: 2023/02/16 18:53:20 by msariasl         ###   ########.fr       */
+/*   Updated: 2023/02/17 02:01:51 by msariasl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,12 @@ t_stack	*create_stack(int argc, char **argv)
 	while (argv[i])
 	{
 		stack_list->value = matoi(argv[i]);
-		stack_list->next = add_stack();
-		stack_list = stack_list->next;
 		i++;
+		if (i < argc)
+		{
+			stack_list->next = add_stack();
+			stack_list = stack_list->next;
+		}
 	}
 	stack_list->next = 0;
 	return (stack_start);

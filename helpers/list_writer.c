@@ -6,7 +6,7 @@
 /*   By: msariasl <msariasl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/10 21:16:29 by ali               #+#    #+#             */
-/*   Updated: 2023/02/16 19:37:34 by msariasl         ###   ########.fr       */
+/*   Updated: 2023/02/17 02:02:22 by msariasl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,36 +38,32 @@ static void	write_iterate_stack(t_stack *start)
 {
 	char	*spaces;
 
-	while (start->next != 0)
+	while (start)
 	{
 		spaces = fill_chars('.', 12);
 		mrintf("%d%s |\n", start->value, getspaces(start->value, spaces));
-		start = start->next;
+		if (start->next)
+			start = start->next;
+		else
+			break ;
+		spaces = 0;
+		free(spaces);
 	}
-	free(spaces);
 }
 
 void	listwrite(t_stack *a_stack, t_stack *b_stack)
 {
-	t_stack			*start;
 	static t_ull	count = 1;
-	static t_ull	doubt = 0;
 
-	if (doubt % 2 == 0)
-		start = a_stack;
-	else
-		start = b_stack;
-	if (doubt % 2 == 0)
-		mrintf("\n%d.\n", count++);
+	mrintf("\t   %d\n", count++);
 	mrintf("____________\n");
-	write_iterate_stack(start);
-	mrintf("____________|");
-	if (doubt % 2 == 0)
-		mrintf("\n(a)\n");
-	else
-		mrintf("\n(b)\n");
-	if (b_stack != 0)
-		doubt++;
-	if (doubt % 2 != 0)
-		listwrite(a_stack, b_stack);
+	if (a_stack)
+		write_iterate_stack(a_stack);
+	mrintf("____________|\n");
+	mrintf("(a)\n");
+	mrintf("____________\n");
+	if (b_stack)
+		write_iterate_stack(b_stack);
+	mrintf("____________|\n");
+	mrintf("(b)\n\n");
 }

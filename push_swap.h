@@ -6,7 +6,7 @@
 /*   By: msariasl <msariasl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 00:11:33 by ali               #+#    #+#             */
-/*   Updated: 2023/02/16 19:40:52 by msariasl         ###   ########.fr       */
+/*   Updated: 2023/02/17 02:08:59 by msariasl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int							size_check(int argc, char **argv);
 int							clone_check(int argc, char **argv);
 
 void						array_sa(int *a);
-void						list_sa(t_stack *start);
+
 void						writemy(char *s);
 void						stackwrite(int *a, int *b, int size);
 long long					matoi(char *arg);
@@ -52,4 +52,14 @@ char						*fill_chars(char c, t_ull size);
 
 t_stack						*create_stack(int argc, char **argv);
 void						listwrite(t_stack *a_stack, t_stack *b_stack);
+
+void						add_first(t_stack **start, int value);
+void						add_last(t_stack **start, int value);
+void						del_first(t_stack **start);
+void						del_last(t_stack **start);
+
+void						list_sa(t_stack *start);
+void						list_sb(t_stack *start);
+void						list_pb(t_stack **a_stack, t_stack **b_stack);
+void						list_pa(t_stack **a_stack, t_stack **b_stack);
 #endif

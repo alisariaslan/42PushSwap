@@ -1,40 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sx.c                                               :+:      :+:    :+:   */
+/*   px.c                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: msariasl <msariasl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/15 23:27:00 by ali               #+#    #+#             */
-/*   Updated: 2023/02/16 19:38:20 by msariasl         ###   ########.fr       */
+/*   Created: 2023/02/16 19:42:57 by msariasl          #+#    #+#             */
+/*   Updated: 2023/02/16 19:44:11 by msariasl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	array_sa(int *a)
+void	list_pb(t_stack *start)
 {
-	int	temp;
-
-	temp = a[0];
-	a[0] = a[1];
-	a[1] = temp;
-	if (SHOW_MOVES)
-		mrintf("sa\n");
-}
-
-void	list_sa(t_stack *start)
-{
-	t_stack	*next;
-	int		temp;
-
-	temp = start->value;
-	if (start->next)
-	{
-		next = start->next;
-		start->value = next->value;
-		next->value = temp;
-		if (SHOW_MOVES)
-			mrintf("sa\n");
-	}
+		
 }

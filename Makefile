@@ -1,7 +1,7 @@
 NAME = push_swap
 FILES = $(shell find . -name "*.c")
 HEADERS = $(shell find . -name "*.h")
-ARGS = -Wall -Wextra -Werror
+ARGSS = -Wall -Wextra -Werror
 
 $(NAME): $(FILES) $(HEADERS)
 	GCC $(ARGS) -c $(FILES) $(HEADERS)

@@ -12,13 +12,12 @@
 
 #include "push_swap.h"
 
+/*
 int	main(int argc, char **argv)
 {
 	int	*a;
 	int	*b;
-	int	show_moves;
 
-	show_moves = 0;
 	if (!count_check(argc) || !character_check(argc, argv) || !size_check(argc,
 			argv) || !clone_check(argc, argv))
 		return (0);
@@ -28,4 +27,20 @@ int	main(int argc, char **argv)
 	sa(a);
 	stackwrite(a, b, argc);
 	return (0);
+}
+*/
+
+int	main(int argc, char **argv)
+{
+	t_stack	*a_stack;
+	t_stack	*b_stack;
+
+	if (!count_check(argc) || !character_check(argc, argv) || !size_check(argc,
+			argv) || !clone_check(argc, argv))
+		return (0);
+	a_stack = create_stack(argc, argv);
+	
+	listwrite(a_stack, b_stack);
+	list_sa(a_stack);
+	listwrite(a_stack, b_stack);
 }

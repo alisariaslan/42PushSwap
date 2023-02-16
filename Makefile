@@ -1,27 +1,36 @@
-PROGRAM = push_swap
-MAINFILE = $(PROGRAM).c
-HEADER = $(PROGRAM).h
-HELPERS = helpers/*.c
-CHECKERS = checkers/*.c
-MOVES = moves/*.c
-RENAMER = -o $(PROGRAM)
-GCC = gcc $(MAINFILE) $(HEADER) $(HELPERS) $(CHECKERS) $(MOVES) $(RENAMER)
+NAME = push_swap
+FILES = $(shell find . -name "*.c")
+HEADERS = $(shell find . -name "*.h")
+ARGS = -Wall -Wextra -Werror
 
-make:
-	clear
-	@$(GCC)
+$(NAME): $(FILES) $(HEADERS)
+	GCC $(ARGS) -c $(FILES) $(HEADERS)
 
-debug:
+all:
 	make
-	./$(PROGRAM) 12 -12 -24 -435 123433
+	GCC $(ARGS) -o $(NAME) *.o
+
+clean:
+	rm -rf *.o
+
+fclean:
+	make clean
+	rm -rf *.gch
+	rm -rf $(NAME)
+
+re:
+	make fclean
+	make all
 
 d:
-	make
-	./$(PROGRAM) 1 123 24 -435 123433
+	make re
+	clear
+	./$(NAME) 1 -1 -0 3 12 65 -54 54 -12 123664
+
 w:
-	make
-	./$(PROGRAM) 1 -12 -24 -435 -
+	make re
+	clear
+	./$(NAME) 1 -1 -0 3 12 65 -54 54 -12 123664 123664
 
 n:
-	clear
-	norminette
+	norminette -R CheckForbiddenSourceHeader

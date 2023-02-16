@@ -31,7 +31,7 @@ t_ll	step_counter(t_ll n)
 	steps = 1;
 	if (n < 0)
 		n *= -1;
-	while (n > 10)
+	while (n >= 10)
 	{
 		n /= 10;
 		steps++;

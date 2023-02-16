@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   writer.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ali <ali@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: msariasl <msariasl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/10 21:16:29 by ali               #+#    #+#             */
-/*   Updated: 2023/02/15 23:20:22 by ali              ###   ########.fr       */
+/*   Updated: 2023/02/16 13:22:16 by msariasl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,15 +49,17 @@ static char	*getspaces(int val, char *spaces)
 	return (spaces);
 }
 
-void	stackwrite(int *a, int *b, int size, int count)
+void	stackwrite(int *a, int *b, int size)
 {
-	int		i;
-	int		s;
-	char	*spaces;
+	int				i;
+	int				s;
+	char			*spaces;
+	static t_ull	count;
 
+	count = 1;
 	i = 0;
 	s = size - 1;
-	mrintf("\n%d.\n", count);
+	mrintf("\n%d.\n", count++);
 	mrintf("____________  ____________\n");
 	while (s--)
 	{

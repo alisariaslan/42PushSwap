@@ -23,10 +23,11 @@ typedef long long			t_ll;
 int							count_check(int argc);
 int							character_check(int argc, char **argv);
 int							size_check(int argc, char **argv);
+int							clone_check(int argc, char **argv);
 
 void						sa(int *a, int show_moves);
 void						writemy(char *s);
-void						stackwrite(int *a, int *b, int size, int count);
+void						stackwrite(int *a, int *b, int size);
 long long					matoi(char *arg);
 char						*itoam(long long n);
 int							*fill_stack(int argc, char **argv);

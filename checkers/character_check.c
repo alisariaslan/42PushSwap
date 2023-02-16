@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   character_check.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ali <ali@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: msariasl <msariasl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/10 21:31:50 by ali               #+#    #+#             */
-/*   Updated: 2023/02/14 00:37:49 by ali              ###   ########.fr       */
+/*   Updated: 2023/02/16 13:32:53 by msariasl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ int	character_check(int argc, char **argv)
 {
 	int	i;
 
+	(void)argc;
 	i = 0;
 	while (!check_characters(&argv[++i]))
 	{

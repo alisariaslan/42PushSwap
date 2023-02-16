@@ -3,15 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ali <ali@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: msariasl <msariasl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 00:11:33 by ali               #+#    #+#             */
-/*   Updated: 2023/02/15 23:32:03 by ali              ###   ########.fr       */
+/*   Updated: 2023/02/16 13:41:00 by msariasl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
+
+# ifndef SHOW_MOVES
+#  define SHOW_MOVES 0
+# endif
 
 # include "stdarg.h"
 # include <stdlib.h>
@@ -25,7 +29,7 @@ int							character_check(int argc, char **argv);
 int							size_check(int argc, char **argv);
 int							clone_check(int argc, char **argv);
 
-void						sa(int *a, int show_moves);
+void						sa(int *a);
 void						writemy(char *s);
 void						stackwrite(int *a, int *b, int size);
 long long					matoi(char *arg);

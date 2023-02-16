@@ -6,7 +6,7 @@
 /*   By: msariasl <msariasl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/10 21:16:29 by ali               #+#    #+#             */
-/*   Updated: 2023/02/16 13:22:16 by msariasl         ###   ########.fr       */
+/*   Updated: 2023/02/16 13:49:54 by msariasl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,9 +54,8 @@ void	stackwrite(int *a, int *b, int size)
 	int				i;
 	int				s;
 	char			*spaces;
-	static t_ull	count;
+	static t_ull	count = 1;
 
-	count = 1;
 	i = 0;
 	s = size - 1;
 	mrintf("\n%d.\n", count++);

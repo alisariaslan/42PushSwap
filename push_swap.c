@@ -25,7 +25,7 @@ int	main(int argc, char **argv)
 	a = fill_stack(argc, argv);
 	b = fill_empty(argc);
 	stackwrite(a, b, argc);
-	sa(a, show_moves);
+	sa(a);
 	stackwrite(a, b, argc);
 	return (0);
 }

@@ -3,22 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   sx.c                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ali <ali@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: msariasl <msariasl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 23:27:00 by ali               #+#    #+#             */
-/*   Updated: 2023/02/15 23:31:36 by ali              ###   ########.fr       */
+/*   Updated: 2023/02/16 13:39:55 by msariasl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	sa(int *a, int show_moves)
+void	sa(int *a)
 {
 	int	temp;
 
 	temp = a[0];
 	a[0] = a[1];
 	a[1] = temp;
-	if (show_moves)
+	if (SHOW_MOVES)
 		mrintf("sa\n");
 }

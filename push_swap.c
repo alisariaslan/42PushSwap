@@ -40,19 +40,4 @@ int	main(int argc, char **argv)
 		return (0);
 	a_stack = create_stack(argc, argv);
 	listwrite(a_stack, b_stack);
-	list_pb(&a_stack, &b_stack);
-	list_pb(&a_stack, &b_stack);
-	list_pb(&a_stack, &b_stack);
-	list_pb(&a_stack, &b_stack);
-	list_pb(&a_stack, &b_stack);
-	list_pb(&a_stack, &b_stack);
-	list_pb(&a_stack, &b_stack);
-	list_pb(&a_stack, &b_stack);
-	list_pb(&a_stack, &b_stack);
-	list_pb(&a_stack, &b_stack);
-	listwrite(a_stack, b_stack);
-	list_sa(a_stack);
-	listwrite(a_stack, b_stack);
-	list_sb(b_stack);
-	listwrite(a_stack, b_stack);
 }

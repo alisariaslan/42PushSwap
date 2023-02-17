@@ -14,7 +14,7 @@
 # define PUSH_SWAP_H
 
 # ifndef SHOW_MOVES
-#  define SHOW_MOVES 0
+#  define SHOW_MOVES 1
 # endif
 
 # include "stdarg.h"
@@ -59,9 +59,9 @@ void						add_last(t_stack **start, int value);
 void						del_first(t_stack **start);
 void						del_last(t_stack **start);
 
-void						list_sa(t_stack *start);
-void						list_sb(t_stack *start);
-void						list_ss(t_stack *a_stack, t_stack *b_stack);
+void						list_sa(t_stack **start);
+void						list_sb(t_stack **start);
+void						list_ss(t_stack **a_stack, t_stack **b_stack);
 void						list_pb(t_stack **a_stack, t_stack **b_stack);
 void						list_pa(t_stack **a_stack, t_stack **b_stack);
 void						list_ra(t_stack **start);

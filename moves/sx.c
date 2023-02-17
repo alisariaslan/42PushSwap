@@ -23,18 +23,18 @@ void	array_sa(int *a)
 		mrintf("sa\n");
 }
 
-void	list_sa(t_stack *start)
+void	list_sa(t_stack **start)
 {
 	t_stack	*next;
 	int		temp;
 
-	if (start)
+	if (*start)
 	{
-		temp = start->value;
-		if (start->next)
+		temp = (*start)->value;
+		if ((*start)->next)
 		{
-			next = start->next;
-			start->value = next->value;
+			next = (*start)->next;
+			(*start)->value = next->value;
 			next->value = temp;
 			if (SHOW_MOVES)
 				mrintf("sa\n");
@@ -42,18 +42,18 @@ void	list_sa(t_stack *start)
 	}
 }
 
-void	list_sb(t_stack *start)
+void	list_sb(t_stack **start)
 {
 	t_stack	*next;
 	int		temp;
 
-	if (start)
+	if ((*start))
 	{
-		temp = start->value;
-		if (start->next)
+		temp = (*start)->value;
+		if ((*start)->next)
 		{
-			next = start->next;
-			start->value = next->value;
+			next = (*start)->next;
+			(*start)->value = next->value;
 			next->value = temp;
 			if (SHOW_MOVES)
 				mrintf("sb\n");
@@ -61,7 +61,7 @@ void	list_sb(t_stack *start)
 	}
 }
 
-void	list_ss(t_stack *a_stack, t_stack *b_stack)
+void	list_ss(t_stack **a_stack, t_stack **b_stack)
 {
 	list_sa(a_stack);
 	list_sb(b_stack);

@@ -25,7 +25,7 @@ re:
 d:
 	make re
 	clear
-	./$(NAME) 1 -912 313131
+	./$(NAME) 3 1 5 7 6 8
 
 w:
 	make re

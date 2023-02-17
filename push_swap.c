@@ -30,6 +30,39 @@ int	main(int argc, char **argv)
 }
 */
 
+void	single_sort(t_stack **my_stack)
+{
+	t_stack	*next;
+	int		step;
+	int		step_reverse;
+
+	step = 0;
+	step_reverse = 0;
+	while ((*my_stack)->next)
+	{
+		next = (*my_stack)->next;
+		if ((*my_stack)->value > next->value)
+		{
+			step_reverse = step;
+			while (step--)
+			{
+				list_ra(my_stack);
+			}
+			list_sa(my_stack);
+			while (step_reverse--)
+			{
+				list_rra(my_stack);
+			}
+			step++;
+		}
+		else
+		{
+			*my_stack = next;
+			step++;
+		}
+	}
+}
+
 int	main(int argc, char **argv)
 {
 	t_stack	*a_stack;
@@ -39,5 +72,7 @@ int	main(int argc, char **argv)
 			argv) || !clone_check(argc, argv))
 		return (0);
 	a_stack = create_stack(argc, argv);
+	listwrite(a_stack, b_stack);
+	single_sort(&a_stack);
 	listwrite(a_stack, b_stack);
 }

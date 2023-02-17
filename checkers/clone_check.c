@@ -31,7 +31,7 @@ int	clone_check(int argc, char **argv)
 			value_two = matoi(argv[i_two]);
 			if (value_one == value_two)
 			{
-				mrintf("Error: All values need to be unique!");
+				mrintf("Error: All values need to be unique!\n");
 				return (0);
 			}
 			i_two++;

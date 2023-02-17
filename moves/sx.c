@@ -23,7 +23,7 @@ void	array_sa(int *a)
 		mrintf("sa\n");
 }
 
-void	list_sa(t_stack **start)
+t_stack	*list_sa(t_stack **start)
 {
 	t_stack	*next;
 	int		temp;
@@ -39,7 +39,9 @@ void	list_sa(t_stack **start)
 			if (SHOW_MOVES)
 				mrintf("sa\n");
 		}
+		return *start;
 	}
+	return 0;
 }
 
 void	list_sb(t_stack **start)

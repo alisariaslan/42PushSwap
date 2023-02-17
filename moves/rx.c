@@ -12,15 +12,18 @@
 
 #include "../push_swap.h"
 
-void	list_ra(t_stack **start)
+t_stack	*list_ra(t_stack **start)
 {
+	t_stack *temp;
 	if (*start)
 	{
 		add_last(start, (*start)->value);
-		del_first(start);
+		temp = del_first(start);
 		if (SHOW_MOVES)
 			mrintf("ra\n");
+		return temp;
 	}
+	return 0;
 }
 
 void	list_rb(t_stack **start)

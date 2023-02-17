@@ -54,20 +54,20 @@ t_stack						*create_stack(int argc, char **argv);
 void						listwrite(t_stack *a_stack, t_stack *b_stack);
 int							get_last(t_stack **start);
 
-void						add_first(t_stack **start, int value);
+t_stack						*add_first(t_stack **start, int value);
 void						add_last(t_stack **start, int value);
-void						del_first(t_stack **start);
-void						del_last(t_stack **start);
+t_stack						*del_first(t_stack **start);
+t_stack						*del_last(t_stack **start);
 
-void						list_sa(t_stack **start);
+t_stack						*list_sa(t_stack **start);
 void						list_sb(t_stack **start);
 void						list_ss(t_stack **a_stack, t_stack **b_stack);
 void						list_pb(t_stack **a_stack, t_stack **b_stack);
 void						list_pa(t_stack **a_stack, t_stack **b_stack);
-void						list_ra(t_stack **start);
+t_stack						*list_ra(t_stack **start);
 void						list_rb(t_stack **start);
 void						list_rr(t_stack **a_stack, t_stack **b_stack);
-void						list_rra(t_stack **start);
+t_stack						*list_rra(t_stack **start);
 void						list_rrb(t_stack **start);
 void						list_rrr(t_stack **a_stack, t_stack **b_stack);
 

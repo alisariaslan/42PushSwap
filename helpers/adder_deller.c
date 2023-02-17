@@ -12,18 +12,25 @@
 
 #include "../push_swap.h"
 
-void	del_first(t_stack **start)
+t_stack	*del_first(t_stack **start)
 {
-	if ((*start)->next)
-		*start = (*start)->next;
-	else
+	if (*start)
 	{
-		*start = 0;
-		free(*start);
+		if ((*start)->next)
+		{
+			*start = (*start)->next;
+			return (*start);
+		}
+		else
+		{
+			*start = 0;
+			free(*start);
+		}
 	}
+	return (0);
 }
 
-void	del_last(t_stack **start)
+t_stack	*del_last(t_stack **start)
 {
 	t_stack	*temp;
 	t_stack	*last;
@@ -41,6 +48,7 @@ void	del_last(t_stack **start)
 			last->next = 0;
 			free(last->next);
 			*start = temp;
+			return *start;
 		}
 		else
 		{
@@ -48,9 +56,10 @@ void	del_last(t_stack **start)
 			free(*start);
 		}
 	}
+	return 0;
 }
 
-void	add_first(t_stack **start, int value)
+t_stack	*add_first(t_stack **start, int value)
 {
 	t_stack	*new;
 
@@ -63,6 +72,7 @@ void	add_first(t_stack **start, int value)
 	}
 	else
 		*start = new;
+	return *start;
 }
 
 void	add_last(t_stack **start, int value)

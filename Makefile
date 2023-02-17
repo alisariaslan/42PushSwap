@@ -1,7 +1,7 @@
 NAME = push_swap
 FILES = $(shell find . -name "*.c")
 HEADERS = $(shell find . -name "*.h")
-ARGSS = -Wall -Wextra -Werror
+ARGSS = -Wall -Wextra -Werror BURAYI DÜZELTTTTTT
 
 $(NAME): $(FILES) $(HEADERS)
 	GCC $(ARGS) -c $(FILES) $(HEADERS)
@@ -25,7 +25,7 @@ re:
 d:
 	make re
 	clear
-	./$(NAME) 3 1 5 7 6 8
+	./$(NAME) 2 1 3 6 5 8
 
 w:
 	make re

@@ -1,7 +1,7 @@
 NAME = push_swap
 FILES = $(shell find . -name "*.c")
 HEADERS = $(shell find . -name "*.h")
-ARGSS = -Wall -Wextra -Werror BURAYI DÜZELTTTTTT
+ARGS........................................ = -Wall -Wextra -Werror
 
 $(NAME): $(FILES) $(HEADERS)
 	GCC $(ARGS) -c $(FILES) $(HEADERS)
@@ -25,12 +25,12 @@ re:
 d:
 	make re
 	clear
-	./$(NAME) 2 1 3 6 5 8
+	./$(NAME) -1 3 2 1 4 -5
 
 w:
 	make re
 	clear
-	./$(NAME) 1 -1 -0 3 12 65 -54 54 -12 123664 123664
+	./$(NAME) -1 3 2 1 4 -5
 
 n:
 	norminette -R CheckForbiddenSourceHeader

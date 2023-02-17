@@ -6,7 +6,7 @@
 /*   By: msariasl <msariasl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 19:42:57 by msariasl          #+#    #+#             */
-/*   Updated: 2023/02/17 02:03:05 by msariasl         ###   ########.fr       */
+/*   Updated: 2023/02/17 13:04:14 by msariasl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 
 void	list_pb(t_stack **a_stack, t_stack **b_stack)
 {
-	t_stack	*new_stack;
-	t_stack	*last_stack;
 	int		temp;
 
 	if (a_stack[0] != 0)
@@ -30,8 +28,6 @@ void	list_pb(t_stack **a_stack, t_stack **b_stack)
 
 void	list_pa(t_stack **a_stack, t_stack **b_stack)
 {
-	t_stack	*new_stack;
-	t_stack	*last_stack;
 	int		temp;
 
 	if (b_stack[0] != 0)

@@ -6,7 +6,7 @@
 /*   By: msariasl <msariasl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 23:27:00 by ali               #+#    #+#             */
-/*   Updated: 2023/02/17 02:11:32 by msariasl         ###   ########.fr       */
+/*   Updated: 2023/02/17 16:34:08 by msariasl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ void	array_sa(int *a)
 		mrintf("sa\n");
 }
 
+/*
 t_stack	*list_sa(t_stack **start)
 {
 	t_stack	*next;
@@ -39,9 +40,29 @@ t_stack	*list_sa(t_stack **start)
 			if (SHOW_MOVES)
 				mrintf("sa\n");
 		}
-		return *start;
+		return (*start);
 	}
-	return 0;
+	return (0);
+}
+*/
+
+void	list_sa(t_stack **start)
+{
+	t_stack	*next;
+	int		temp;
+
+	if (*start)
+	{
+		if ((*start)->next)
+		{
+			temp = (*start)->value;
+			next = (*start)->next;
+			(*start)->value = next->value;
+			next->value = temp;
+			if (SHOW_MOVES)
+				mrintf("sa\n");
+		}
+	}
 }
 
 void	list_sb(t_stack **start)

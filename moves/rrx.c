@@ -6,7 +6,7 @@
 /*   By: msariasl <msariasl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 02:28:03 by msariasl          #+#    #+#             */
-/*   Updated: 2023/02/17 03:58:28 by msariasl         ###   ########.fr       */
+/*   Updated: 2023/02/17 12:56:25 by msariasl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 t_stack	*list_rra(t_stack **start)
 {
-	t_stack *temp_stack;
-	int	temp;
+	t_stack	*temp_stack;
+	int		temp;
 
 	if (*start)
 	{
@@ -26,10 +26,10 @@ t_stack	*list_rra(t_stack **start)
 			temp_stack = add_first(start, temp);
 			if (SHOW_MOVES)
 				mrintf("rra\n");
-			return temp_stack;
+			return (temp_stack);
 		}
 	}
-	return 0;
+	return (0);
 }
 
 void	list_rrb(t_stack **start)

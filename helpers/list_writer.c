@@ -6,7 +6,7 @@
 /*   By: msariasl <msariasl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/10 21:16:29 by ali               #+#    #+#             */
-/*   Updated: 2023/02/17 02:02:22 by msariasl         ###   ########.fr       */
+/*   Updated: 2023/02/17 14:43:13 by msariasl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ void	listwrite(t_stack *a_stack, t_stack *b_stack)
 {
 	static t_ull	count = 1;
 
-	mrintf("\t   %d\n", count++);
+	mrintf("\t\t-> %d\n", count++);
 	mrintf("____________\n");
 	if (a_stack)
 		write_iterate_stack(a_stack);

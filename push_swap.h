@@ -6,7 +6,7 @@
 /*   By: msariasl <msariasl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 00:11:33 by ali               #+#    #+#             */
-/*   Updated: 2023/02/17 03:57:22 by msariasl         ###   ########.fr       */
+/*   Updated: 2023/02/17 16:54:57 by msariasl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,7 @@
 #  define SHOW_MOVES 1
 # endif
 
-# include "stdarg.h"
-# include <stdio.h>
+# include <stdarg.h>
 # include <stdlib.h>
 # include <unistd.h>
 
@@ -59,7 +58,8 @@ void						add_last(t_stack **start, int value);
 t_stack						*del_first(t_stack **start);
 t_stack						*del_last(t_stack **start);
 
-t_stack						*list_sa(t_stack **start);
+void						list_sa(t_stack **start);
+
 void						list_sb(t_stack **start);
 void						list_ss(t_stack **a_stack, t_stack **b_stack);
 void						list_pb(t_stack **a_stack, t_stack **b_stack);

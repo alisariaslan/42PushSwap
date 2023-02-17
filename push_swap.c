@@ -6,71 +6,110 @@
 /*   By: msariasl <msariasl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 12:02:07 by msariasl          #+#    #+#             */
-/*   Updated: 2023/02/17 12:11:34 by msariasl         ###   ########.fr       */
+/*   Updated: 2023/02/17 17:08:16 by msariasl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	counter(int *step_counter, int *step_reverser, t_stack ***my_stack)
+static int	stack_counter(t_stack **my_stack)
 {
-	while (*step_counter)
+	int		i;
+	t_stack	*temp;
+
+	if (*my_stack)
 	{
-		(*step_counter)--;
-		(*step_reverser)++;
-		list_ra(*my_stack);
+		i = 0;
+		temp = *my_stack;
+		while (temp)
+		{
+			temp = temp->next;
+			i++;
+		}
+		return (i);
 	}
+	return (0);
 }
 
-static void	reverser(int *step_reverser, t_stack ***my_stack)
-{
-	while (*step_reverser)
-	{
-		list_rra(*my_stack);
-		(*step_reverser)--;
-	}
-}
-
-static void	single_sort(t_stack **my_stack)
+int	shift_min(t_stack **my_stack)
 {
 	t_stack	*temp;
-	t_stack	*next;
-	int		step_counter;
-	int		step_reverser;
+	int		min_value;
+	int		index;
+	int		min_index;
+	int		shift;
 
-	temp = *my_stack;
-	step_counter = 0;
-	step_reverser = 0;
-	while (temp->next)
+	index = 0;
+	min_index = 0;
+	if (*my_stack)
 	{
-		next = temp->next;
-		if (temp->value > next->value)
+		temp = *my_stack;
+		min_value = temp->value;
+		while (temp)
 		{
-			counter(&step_counter, &step_reverser, &my_stack);
-			list_sa(my_stack);
-			while (step_reverser)
+			if (min_value > temp->value)
 			{
-				list_rra(my_stack);
-				step_reverser--;
+				min_value = temp->value;
+				min_index = index;
 			}
+			index++;
+			temp = temp->next;
 		}
-		temp = temp->next;
-		step_counter++;
+		shift = stack_counter(my_stack) - min_index;
+		if (shift > min_index)
+			shift = min_index * -1;
+		mrintf("\t-> min_value:%d\n", min_value);
+		mrintf("\t-> shift_value:%d\n", shift);
+		return (shift);
 	}
+	return (0);
+}
+
+static void	easy_sort(t_stack **a_stack, t_stack **b_stack)
+{
+	t_stack	*next;
+	t_stack	*temp;
+	int		shift;
+
+	if (*a_stack)
+	{
+		next = (*a_stack)->next;
+		if (((*a_stack))->value > next->value)
+			list_sa(a_stack);
+		shift = shift_min(a_stack);
+		while (shift > 0)
+		{
+			list_rra(a_stack);
+			shift--;
+		}
+		while (shift < 0)
+		{
+			list_ra(a_stack);
+			shift++;
+		}
+		list_pb(a_stack, b_stack);
+		list_pb(a_stack, b_stack);
+		list_pb(a_stack, b_stack);
+		list_pb(a_stack, b_stack);
+		list_pb(a_stack, b_stack);
+		list_pb(a_stack, b_stack);
+		
+	}
+	//if (*a_stack)
+	//	easy_sort(a_stack, b_stack);
 }
 
 int	main(int argc, char **argv)
 {
 	t_stack	*a_stack;
 	t_stack	*b_stack;
-	t_stack	*temp;
 
 	if (!count_check(argc) || !character_check(argc, argv) || !size_check(argc,
 			argv) || !clone_check(argc, argv))
 		return (0);
 	a_stack = create_stack(argc, argv);
 	listwrite(a_stack, b_stack);
-	single_sort(&a_stack);
+	easy_sort(&a_stack, &b_stack);
 	listwrite(a_stack, b_stack);
 }
 

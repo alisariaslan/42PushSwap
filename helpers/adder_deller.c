@@ -6,7 +6,7 @@
 /*   By: msariasl <msariasl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 21:25:26 by msariasl          #+#    #+#             */
-/*   Updated: 2023/02/17 03:47:16 by msariasl         ###   ########.fr       */
+/*   Updated: 2023/02/17 12:56:15 by msariasl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ t_stack	*del_last(t_stack **start)
 			last->next = 0;
 			free(last->next);
 			*start = temp;
-			return *start;
+			return (*start);
 		}
 		else
 		{
@@ -56,7 +56,7 @@ t_stack	*del_last(t_stack **start)
 			free(*start);
 		}
 	}
-	return 0;
+	return (0);
 }
 
 t_stack	*add_first(t_stack **start, int value)
@@ -72,7 +72,7 @@ t_stack	*add_first(t_stack **start, int value)
 	}
 	else
 		*start = new;
-	return *start;
+	return (*start);
 }
 
 void	add_last(t_stack **start, int value)

@@ -6,7 +6,7 @@
 /*   By: ali <ali@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/10 21:16:29 by ali               #+#    #+#             */
-/*   Updated: 2023/02/18 22:19:28 by ali              ###   ########.fr       */
+/*   Updated: 2023/02/18 22:25:19 by ali              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -186,5 +186,5 @@ int	main(int argc, char **argv)
 
 /*
 VALGRIND LEAK TEST (COPY PASTE)
-gcc -g -O1 problem && valgrind --leak-check=yes --track-origins=yes --log-file=valgrind.rpt --track-origins=yes ./a.out 3 2 1 0 -1 -2 -3 && cat valgrind.rpt
+gcc -g -O1 problem.c && valgrind --leak-check=yes --track-origins=yes --log-file=valgrind.rpt --track-origins=yes ./a.out 3 2 1 0 -1 -2 -3 && cat valgrind.rpt
 */

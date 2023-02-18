@@ -6,7 +6,7 @@
 /*   By: ali <ali@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/12 21:40:23 by ali               #+#    #+#             */
-/*   Updated: 2023/02/14 00:45:20 by ali              ###   ########.fr       */
+/*   Updated: 2023/02/18 19:05:20 by ali              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,12 @@ static int	print_s(char *s)
 static int	print_d(int n)
 {
 	char	*num;
+	int		char_count;
 
 	num = itoam(n);
-	return (write(1, num, char_counter(num)));
+	char_count = write(1, num, char_counter(num));
+	free(num);
+	return (char_count);
 }
 
 static int	print_type(va_list args, char format, int *i)
@@ -64,5 +67,6 @@ int	mrintf(char *str, ...)
 		}
 		i++;
 	}
+	va_end(args);
 	return (len);
 }

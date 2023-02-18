@@ -27,9 +27,13 @@ release:
 	make clean
 	rm -rf *.gch
 
+leak:
+	gcc -g -O1 $(FILES) $(HEADERS)
+	valgrind --leak-check=yes --track-origins=yes --log-file=valgrind.rpt --track-origins=yes ./a.out 3 2 1 0 -1 -2 -3
+	cat valgrind.rpt
+
 d:
 	make re
-	clear
 	./$(NAME) 2 1 3 6 5 8
 
 w:

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   list_writer.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: msariasl <msariasl@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ali <ali@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/10 21:16:29 by ali               #+#    #+#             */
-/*   Updated: 2023/02/17 14:43:13 by msariasl         ###   ########.fr       */
+/*   Updated: 2023/02/18 22:20:18 by ali              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,24 +37,28 @@ static char	*getspaces(int val, char *spaces)
 static void	write_iterate_stack(t_stack *start)
 {
 	char	*spaces;
+	char	*getspaces_;
 
 	while (start)
 	{
 		spaces = fill_chars('.', 12);
-		mrintf("%d%s |\n", start->value, getspaces(start->value, spaces));
+		getspaces_ = getspaces(start->value, spaces);
+		spaces = 0;
+		free(spaces);
+		mrintf("%d%s |\n", start->value, getspaces_);
+		free(getspaces_);
 		if (start->next)
 			start = start->next;
 		else
 			break ;
-		spaces = 0;
-		free(spaces);
 	}
 }
 
 void	listwrite(t_stack *a_stack, t_stack *b_stack)
 {
-	static t_ull	count = 1;
+	static t_ull	count;
 
+	count = 1;
 	mrintf("\t\t-> %d\n", count++);
 	mrintf("____________\n");
 	if (a_stack)

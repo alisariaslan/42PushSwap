@@ -6,11 +6,26 @@
 /*   By: ali <ali@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 12:02:07 by msariasl          #+#    #+#             */
-/*   Updated: 2023/02/18 11:13:06 by ali              ###   ########.fr       */
+/*   Updated: 2023/02/18 22:19:56 by ali              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+static void	clear_stack(t_stack **stack)
+{
+	t_stack	*prev;
+
+	while (*stack)
+	{
+		prev = ((*stack));
+		if ((*stack)->next)
+			(*stack) = (*stack)->next;
+		else
+			*stack = 0;
+		free(prev);
+	}
+}
 
 int	main(int argc, char **argv)
 {
@@ -21,5 +36,8 @@ int	main(int argc, char **argv)
 			argv) || !clone_check(argc, argv))
 		return (0);
 	a_stack = create_stack(argc, argv);
-	amel_sort(&a_stack, &b_stack);
+	listwrite(a_stack, b_stack);
+	listwrite(a_stack, b_stack);
+	clear_stack(&a_stack);
+	//amel_sort(&a_stack, &b_stack);
 }

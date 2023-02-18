@@ -6,7 +6,7 @@
 /*   By: ali <ali@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 00:11:33 by ali               #+#    #+#             */
-/*   Updated: 2023/02/18 10:23:51 by ali              ###   ########.fr       */
+/*   Updated: 2023/02/18 18:32:47 by ali              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@
 typedef struct stack
 {
 	int						value;
-	void					*next;
+	struct stack			*next;
 }							t_stack;
 
 typedef unsigned long long	t_ull;

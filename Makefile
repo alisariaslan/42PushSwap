@@ -4,11 +4,11 @@ HEADERS = $(shell find . -name "*.h")
 ARGS........................................ = -Wall -Wextra -Werror
 
 $(NAME): $(FILES) $(HEADERS)
-	GCC $(ARGS) -c $(FILES) $(HEADERS)
+	gcc $(ARGS) -c $(FILES) $(HEADERS)
 
 all:
 	make
-	GCC $(ARGS) -o $(NAME) *.o
+	gcc $(ARGS) -o $(NAME) *.o
 
 clean:
 	rm -rf *.o
@@ -22,15 +22,20 @@ re:
 	make fclean
 	make all
 
+release:
+	make re
+	make clean
+	rm -rf *.gch
+
 d:
 	make re
 	clear
-	./$(NAME) -1 3 2 1 4 -5
+	./$(NAME) 2 1 3 6 5 8
 
 w:
 	make re
-	clear
-	./$(NAME) -1 3 2 1 4 -5
+	./$(NAME) 1 2 3 -1
 
 n:
+	clear
 	norminette -R CheckForbiddenSourceHeader

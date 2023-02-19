@@ -6,7 +6,7 @@
 /*   By: ali <ali@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 00:11:33 by ali               #+#    #+#             */
-/*   Updated: 2023/02/18 18:32:47 by ali              ###   ########.fr       */
+/*   Updated: 2023/02/19 00:26:31 by ali              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,10 +53,10 @@ t_stack						*create_stack(int argc, char **argv);
 void						listwrite(t_stack *a_stack, t_stack *b_stack);
 int							get_last(t_stack **start);
 
-t_stack						*add_first(t_stack **start, int value);
+void						add_first(t_stack **start, int value);
 void						add_last(t_stack **start, int value);
 t_stack						*del_first(t_stack **start);
-t_stack						*del_last(t_stack **start);
+void						del_last(t_stack **start);
 
 void						list_sa(t_stack **start);
 

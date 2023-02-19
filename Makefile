@@ -29,7 +29,7 @@ release:
 
 leak:
 	gcc -g -O1 $(FILES) $(HEADERS)
-	valgrind --leak-check=yes --track-origins=yes --log-file=valgrind.rpt --track-origins=yes ./a.out 3 2 1 0 -1 -2 -3
+	valgrind --leak-check=yes --log-file=valgrind.rpt ./a.out 3 2 1 0 -1 -2 -3
 	cat valgrind.rpt
 
 d:

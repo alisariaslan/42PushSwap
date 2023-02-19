@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   adder_deller.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: msariasl <msariasl@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ali <ali@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 21:25:26 by msariasl          #+#    #+#             */
-/*   Updated: 2023/02/17 12:56:15 by msariasl         ###   ########.fr       */
+/*   Updated: 2023/02/19 09:23:00 by ali              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,52 +14,53 @@
 
 t_stack	*del_first(t_stack **start)
 {
+	t_stack	*prev;
+
 	if (*start)
 	{
 		if ((*start)->next)
 		{
+			prev = *start;
 			*start = (*start)->next;
+			free(prev);
 			return (*start);
 		}
 		else
 		{
-			*start = 0;
 			free(*start);
+			*start = 0;
 		}
 	}
 	return (0);
 }
 
-t_stack	*del_last(t_stack **start)
+void	del_last(t_stack **start)
 {
-	t_stack	*temp;
 	t_stack	*last;
+	t_stack	*prev;
 
 	if (*start)
 	{
-		if ((*start)->next)
+		if (stack_counter(start) > 1)
 		{
-			temp = *start;
-			while ((*start)->next)
+			last = *start;
+			while ((last)->next)
 			{
-				last = *start;
-				(*start) = (*start)->next;
+				prev = last;
+				last = (last)->next;
 			}
-			last->next = 0;
-			free(last->next);
-			*start = temp;
-			return (*start);
+			prev->next = 0;
+			free(last);
 		}
 		else
 		{
-			*start = 0;
 			free(*start);
+			*start = 0;
 		}
 	}
-	return (0);
 }
 
-t_stack	*add_first(t_stack **start, int value)
+void	add_first(t_stack **start, int value)
 {
 	t_stack	*new;
 
@@ -72,7 +73,6 @@ t_stack	*add_first(t_stack **start, int value)
 	}
 	else
 		*start = new;
-	return (*start);
 }
 
 void	add_last(t_stack **start, int value)

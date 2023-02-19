@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rrx.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: msariasl <msariasl@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ali <ali@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 02:28:03 by msariasl          #+#    #+#             */
-/*   Updated: 2023/02/17 12:56:25 by msariasl         ###   ########.fr       */
+/*   Updated: 2023/02/18 22:33:46 by ali              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 t_stack	*list_rra(t_stack **start)
 {
-	t_stack	*temp_stack;
 	int		temp;
 
 	if (*start)
@@ -23,10 +22,10 @@ t_stack	*list_rra(t_stack **start)
 		{
 			temp = get_last(start);
 			del_last(start);
-			temp_stack = add_first(start, temp);
+			add_first(start, temp);
 			if (SHOW_MOVES)
 				mrintf("rra\n");
-			return (temp_stack);
+			return (*start);
 		}
 	}
 	return (0);

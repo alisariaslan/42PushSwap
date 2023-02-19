@@ -6,7 +6,7 @@
 /*   By: ali <ali@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 12:02:07 by msariasl          #+#    #+#             */
-/*   Updated: 2023/02/19 09:23:25 by ali              ###   ########.fr       */
+/*   Updated: 2023/02/19 09:36:45 by ali              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,8 @@ int	main(int argc, char **argv)
 		return (0);
 	a_stack = create_stack(argc, argv);
 	listwrite(a_stack, b_stack);
+	
 	listwrite(a_stack, b_stack);
 	clear_stack(&a_stack);
+	clear_stack(&b_stack);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sx.c                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: msariasl <msariasl@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ali <ali@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 23:27:00 by ali               #+#    #+#             */
-/*   Updated: 2023/02/17 16:34:08 by msariasl         ###   ########.fr       */
+/*   Updated: 2023/02/19 09:35:42 by ali              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,42 +23,17 @@ void	array_sa(int *a)
 		mrintf("sa\n");
 }
 
-/*
-t_stack	*list_sa(t_stack **start)
-{
-	t_stack	*next;
-	int		temp;
-
-	if (*start)
-	{
-		temp = (*start)->value;
-		if ((*start)->next)
-		{
-			next = (*start)->next;
-			(*start)->value = next->value;
-			next->value = temp;
-			if (SHOW_MOVES)
-				mrintf("sa\n");
-		}
-		return (*start);
-	}
-	return (0);
-}
-*/
-
 void	list_sa(t_stack **start)
 {
-	t_stack	*next;
-	int		temp;
+	int	temp;
 
 	if (*start)
 	{
 		if ((*start)->next)
 		{
 			temp = (*start)->value;
-			next = (*start)->next;
-			(*start)->value = next->value;
-			next->value = temp;
+			(*start)->value = (*start)->next->value;
+			(*start)->next->value = temp;
 			if (SHOW_MOVES)
 				mrintf("sa\n");
 		}
@@ -67,17 +42,15 @@ void	list_sa(t_stack **start)
 
 void	list_sb(t_stack **start)
 {
-	t_stack	*next;
-	int		temp;
+	int	temp;
 
-	if ((*start))
+	if (*start)
 	{
-		temp = (*start)->value;
 		if ((*start)->next)
 		{
-			next = (*start)->next;
-			(*start)->value = next->value;
-			next->value = temp;
+			temp = (*start)->value;
+			(*start)->value = (*start)->next->value;
+			(*start)->next->value = temp;
 			if (SHOW_MOVES)
 				mrintf("sb\n");
 		}

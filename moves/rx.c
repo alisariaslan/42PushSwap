@@ -6,35 +6,43 @@
 /*   By: ali <ali@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 02:13:10 by msariasl          #+#    #+#             */
-/*   Updated: 2023/02/18 22:32:01 by ali              ###   ########.fr       */
+/*   Updated: 2023/02/19 10:03:09 by ali              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-t_stack	*list_ra(t_stack **start)
+void	list_ra(t_stack **start)
 {
-	t_stack	*temp;
+	int	temp;
 
 	if (*start)
 	{
-		add_last(start, (*start)->value);
-		temp = del_first(start);
-		if (SHOW_MOVES)
-			mrintf("ra\n");
-		return (temp);
+		if ((*start)->next)
+		{
+			temp = (*start)->value;
+			del_first(start);
+			add_last(start, temp);
+			if (SHOW_MOVES)
+				mrintf("ra\n");
+		}
 	}
-	return (0);
 }
 
 void	list_rb(t_stack **start)
 {
+	int	temp;
+
 	if (*start)
 	{
-		add_last(start, (*start)->value);
-		del_first(start);
-		if (SHOW_MOVES)
-			mrintf("rb\n");
+		if ((*start)->next)
+		{
+			temp = (*start)->value;
+			del_first(start);
+			add_last(start, temp);
+			if (SHOW_MOVES)
+				mrintf("rb\n");
+		}
 	}
 }
 

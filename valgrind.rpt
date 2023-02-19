@@ -1,34 +1,86 @@
-==191499== Memcheck, a memory error detector
-==191499== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==191499== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
-==191499== Command: ./a.out 3 2 1 0 -1 -2 -3
-==191499== Parent PID: 191440
-==191499== 
-==191499== Conditional jump or move depends on uninitialised value(s)
-==191499==    at 0x1099E8: listwrite (list_writer.c:69)
-==191499==    by 0x109258: main (push_swap.c:39)
-==191499== 
-==191499== Conditional jump or move depends on uninitialised value(s)
-==191499==    at 0x109F88: add_first (adder_deller.c:69)
-==191499==    by 0x1094D0: list_pb (px.c:23)
-==191499==    by 0x10926D: main (push_swap.c:41)
-==191499== 
-==191499== Conditional jump or move depends on uninitialised value(s)
-==191499==    at 0x10992C: write_iterate_stack (list_writer.c:50)
-==191499==    by 0x1099F1: listwrite (list_writer.c:70)
-==191499==    by 0x10928F: main (push_swap.c:44)
-==191499== 
-==191499== Conditional jump or move depends on uninitialised value(s)
-==191499==    at 0x1091C7: clear_stack (push_swap.c:19)
-==191499==    by 0x10929F: main (push_swap.c:46)
-==191499== 
-==191499== 
-==191499== HEAP SUMMARY:
-==191499==     in use at exit: 0 bytes in 0 blocks
-==191499==   total heap usage: 39 allocs, 39 frees, 370 bytes allocated
-==191499== 
-==191499== All heap blocks were freed -- no leaks are possible
-==191499== 
-==191499== Use --track-origins=yes to see where uninitialised values come from
-==191499== For lists of detected and suppressed errors, rerun with: -s
-==191499== ERROR SUMMARY: 4 errors from 4 contexts (suppressed: 0 from 0)
+==195412== Memcheck, a memory error detector
+==195412== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==195412== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==195412== Command: ./a.out 4 67 3 87 23
+==195412== Parent PID: 195357
+==195412== 
+==195412== Conditional jump or move depends on uninitialised value(s)
+==195412==    at 0x1099E7: listwrite (list_writer.c:69)
+==195412==    by 0x109258: main (push_swap.c:39)
+==195412== 
+==195412== Conditional jump or move depends on uninitialised value(s)
+==195412==    at 0x109FD0: add_last (adder_deller.c:88)
+==195412==    by 0x109380: list_ra (rx.c:25)
+==195412==    by 0x10A0C4: sort_phase_one (amel_sort.c:56)
+==195412==    by 0x10A0C4: amel_sort (amel_sort.c:75)
+==195412==    by 0x10926D: main (push_swap.c:40)
+==195412== 
+==195412== Conditional jump or move depends on uninitialised value(s)
+==195412==    at 0x109F87: add_first (adder_deller.c:69)
+==195412==    by 0x1094CF: list_pb (px.c:23)
+==195412==    by 0x10A0AE: sort_phase_one (amel_sort.c:59)
+==195412==    by 0x10A0AE: amel_sort (amel_sort.c:75)
+==195412==    by 0x10926D: main (push_swap.c:40)
+==195412== 
+==195412== Conditional jump or move depends on uninitialised value(s)
+==195412==    at 0x109EC2: stack_counter (counter.c:51)
+==195412==    by 0x10A056: amel_sort (amel_sort.c:72)
+==195412==    by 0x10926D: main (push_swap.c:40)
+==195412== 
+==195412== Conditional jump or move depends on uninitialised value(s)
+==195412==    at 0x10971D: shift_min (shifter.c:25)
+==195412==    by 0x10A090: sort_phase_one (amel_sort.c:48)
+==195412==    by 0x10A090: amel_sort (amel_sort.c:75)
+==195412==    by 0x10926D: main (push_swap.c:40)
+==195412== 
+==195412== Conditional jump or move depends on uninitialised value(s)
+==195412==    at 0x109EC2: stack_counter (counter.c:51)
+==195412==    by 0x10972F: shift_min (shifter.c:35)
+==195412==    by 0x10A090: sort_phase_one (amel_sort.c:48)
+==195412==    by 0x10A090: amel_sort (amel_sort.c:75)
+==195412==    by 0x10926D: main (push_swap.c:40)
+==195412== 
+==195412== Conditional jump or move depends on uninitialised value(s)
+==195412==    at 0x10A005: get_last (adder_deller.c:112)
+==195412==    by 0x109417: list_rra (rrx.c:23)
+==195412==    by 0x10A09E: sort_phase_one (amel_sort.c:51)
+==195412==    by 0x10A09E: amel_sort (amel_sort.c:75)
+==195412==    by 0x10926D: main (push_swap.c:40)
+==195412== 
+==195412== Conditional jump or move depends on uninitialised value(s)
+==195412==    at 0x109EC2: stack_counter (counter.c:51)
+==195412==    by 0x109F26: del_last (adder_deller.c:44)
+==195412==    by 0x109421: list_rra (rrx.c:24)
+==195412==    by 0x10A09E: sort_phase_one (amel_sort.c:51)
+==195412==    by 0x10A09E: amel_sort (amel_sort.c:75)
+==195412==    by 0x10926D: main (push_swap.c:40)
+==195412== 
+==195412== Conditional jump or move depends on uninitialised value(s)
+==195412==    at 0x109F3E: del_last (adder_deller.c:47)
+==195412==    by 0x109421: list_rra (rrx.c:24)
+==195412==    by 0x10A09E: sort_phase_one (amel_sort.c:51)
+==195412==    by 0x10A09E: amel_sort (amel_sort.c:75)
+==195412==    by 0x10926D: main (push_swap.c:40)
+==195412== 
+==195412== Conditional jump or move depends on uninitialised value(s)
+==195412==    at 0x109EC2: stack_counter (counter.c:51)
+==195412==    by 0x10A0D3: amel_sort (amel_sort.c:77)
+==195412==    by 0x10926D: main (push_swap.c:40)
+==195412== 
+==195412== Conditional jump or move depends on uninitialised value(s)
+==195412==    at 0x109EE3: del_first (adder_deller.c:21)
+==195412==    by 0x109507: list_pa (px.c:36)
+==195412==    by 0x10A0E9: sort_phase_two (amel_sort.c:64)
+==195412==    by 0x10A0E9: amel_sort (amel_sort.c:80)
+==195412==    by 0x10926D: main (push_swap.c:40)
+==195412== 
+==195412== 
+==195412== HEAP SUMMARY:
+==195412==     in use at exit: 0 bytes in 0 blocks
+==195412==   total heap usage: 37 allocs, 37 frees, 400 bytes allocated
+==195412== 
+==195412== All heap blocks were freed -- no leaks are possible
+==195412== 
+==195412== Use --track-origins=yes to see where uninitialised values come from
+==195412== For lists of detected and suppressed errors, rerun with: -s
+==195412== ERROR SUMMARY: 13 errors from 11 contexts (suppressed: 0 from 0)

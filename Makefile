@@ -29,7 +29,7 @@ release:
 
 leak:
 	gcc -g -O1 $(FILES) $(HEADERS)
-	valgrind --leak-check=yes --log-file=valgrind.rpt ./a.out 3 2 1 0 -1 -2 -3
+	valgrind --leak-check=yes --log-file=valgrind.rpt ./a.out 4 67 3 87 23
 	cat valgrind.rpt
 
 d:
@@ -38,7 +38,7 @@ d:
 
 w:
 	make re
-	./$(NAME) 1 2 3 -1
+	./$(NAME) 4 67 3 87 23
 
 n:
 	clear

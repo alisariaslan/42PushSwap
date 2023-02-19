@@ -6,7 +6,7 @@
 /*   By: ali <ali@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 00:11:33 by ali               #+#    #+#             */
-/*   Updated: 2023/02/19 00:26:31 by ali              ###   ########.fr       */
+/*   Updated: 2023/02/19 10:03:44 by ali              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,10 +64,10 @@ void						list_sb(t_stack **start);
 void						list_ss(t_stack **a_stack, t_stack **b_stack);
 void						list_pb(t_stack **a_stack, t_stack **b_stack);
 void						list_pa(t_stack **a_stack, t_stack **b_stack);
-t_stack						*list_ra(t_stack **start);
+void						list_ra(t_stack **start);
 void						list_rb(t_stack **start);
 void						list_rr(t_stack **a_stack, t_stack **b_stack);
-t_stack						*list_rra(t_stack **start);
+void						list_rra(t_stack **start);
 void						list_rrb(t_stack **start);
 void						list_rrr(t_stack **a_stack, t_stack **b_stack);
 

@@ -6,7 +6,7 @@
 /*   By: ali <ali@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 00:11:33 by ali               #+#    #+#             */
-/*   Updated: 2023/02/19 10:36:18 by ali              ###   ########.fr       */
+/*   Updated: 2023/02/19 20:59:51 by ali              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 # endif
 
 # ifndef SHOW_RESULT
-#  define SHOW_RESULT 0
+#  define SHOW_RESULT 1
 # endif
 
 # include <stdarg.h>
@@ -75,10 +75,12 @@ void						list_rra(t_stack **start);
 void						list_rrb(t_stack **start);
 void						list_rrr(t_stack **a_stack, t_stack **b_stack);
 
-void						amel_sort(t_stack **a_stack, t_stack **b_stack);
 int							stack_counter(t_stack **my_stack);
 int							shift_min(t_stack **my_stack, int index,
 								int min_index);
 int							if_sorted(t_stack *my_stack);
+
+void						amel_sort(t_stack **a_stack, t_stack **b_stack);
+void						tequila_sort(t_stack **a_stack, t_stack **b_stack);
 
 #endif

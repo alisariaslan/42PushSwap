@@ -6,7 +6,7 @@
 /*   By: ali <ali@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 09:56:45 by ali               #+#    #+#             */
-/*   Updated: 2023/02/19 10:34:55 by ali              ###   ########.fr       */
+/*   Updated: 2023/02/19 11:34:53 by ali              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,8 @@ static void	sort_phase_one(t_stack **a_stack, t_stack **b_stack, int shift)
 			list_ra(a_stack);
 			shift++;
 		}
-		list_pb(a_stack, b_stack);
+		if (!if_sorted(*a_stack))
+			list_pb(a_stack, b_stack);
 	}
 }
 

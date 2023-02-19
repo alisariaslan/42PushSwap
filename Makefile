@@ -40,6 +40,11 @@ w:
 	make re
 	./$(NAME) 4 67 3 87 23
 
+test:
+	clear
+	./$(NAME) 2 1 3 6 5 8 | wc -l
+	./$(NAME) 4 67 3 87 23 | wc -l
+
 n:
 	clear
 	norminette -R CheckForbiddenSourceHeader

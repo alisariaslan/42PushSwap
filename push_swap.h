@@ -6,7 +6,7 @@
 /*   By: ali <ali@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 00:11:33 by ali               #+#    #+#             */
-/*   Updated: 2023/02/19 10:03:44 by ali              ###   ########.fr       */
+/*   Updated: 2023/02/19 10:36:18 by ali              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,10 @@
 
 # ifndef SHOW_MOVES
 #  define SHOW_MOVES 1
+# endif
+
+# ifndef SHOW_RESULT
+#  define SHOW_RESULT 0
 # endif
 
 # include <stdarg.h>

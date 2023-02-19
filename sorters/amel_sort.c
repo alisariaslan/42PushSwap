@@ -6,7 +6,7 @@
 /*   By: ali <ali@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 09:56:45 by ali               #+#    #+#             */
-/*   Updated: 2023/02/18 11:13:15 by ali              ###   ########.fr       */
+/*   Updated: 2023/02/19 10:34:55 by ali              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,24 +39,25 @@ static void	sort_phase_one(t_stack **a_stack, t_stack **b_stack, int shift)
 {
 	t_stack	*next;
 
-	if ((*a_stack)->next)
+	if ((*a_stack)->value > (*a_stack)->next->value)
 	{
-		next = (*a_stack)->next;
-		if (((*a_stack))->value > next->value)
-			list_sa(a_stack);
+		list_sa(a_stack);
 	}
-	shift = shift_min(a_stack, 0, 0);
-	while (shift > 0)
+	else
 	{
-		list_rra(a_stack);
-		shift--;
+		shift = shift_min(a_stack, 0, 0);
+		while (shift > 0)
+		{
+			list_rra(a_stack);
+			shift--;
+		}
+		while (shift < 0)
+		{
+			list_ra(a_stack);
+			shift++;
+		}
+		list_pb(a_stack, b_stack);
 	}
-	while (shift < 0)
-	{
-		list_ra(a_stack);
-		shift++;
-	}
-	list_pb(a_stack, b_stack);
 }
 
 static void	sort_phase_two(t_stack **a_stack, t_stack **b_stack, int shift)

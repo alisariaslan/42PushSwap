@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   tequila_sort.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ali <ali@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: msariasl <msariasl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 20:29:47 by ali               #+#    #+#             */
-/*   Updated: 2023/02/20 00:02:14 by ali              ###   ########.fr       */
+/*   Updated: 2023/02/20 13:29:31 by msariasl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -155,8 +155,5 @@ void	tequila_sort(t_stack **a_stack, t_stack **b_stack)
 
 		else if (!if_sorted(*a_stack))
 			list_ra(a_stack);
-
-		
 	}
-
 }

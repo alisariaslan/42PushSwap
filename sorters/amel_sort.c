@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   amel_sort.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ali <ali@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: msariasl <msariasl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 09:56:45 by ali               #+#    #+#             */
-/*   Updated: 2023/02/19 11:34:53 by ali              ###   ########.fr       */
+/*   Updated: 2023/02/20 13:35:40 by msariasl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,9 +68,6 @@ static void	sort_phase_two(t_stack **a_stack, t_stack **b_stack, int shift)
 
 void	amel_sort(t_stack **a_stack, t_stack **b_stack)
 {
-	t_stack	*next;
-	t_stack	*temp;
-
 	while (stack_counter(a_stack) > 0 && !if_sorted(*a_stack))
 	{
 		if (*a_stack)

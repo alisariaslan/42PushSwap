@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   adder_deller.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ali <ali@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: msariasl <msariasl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 21:25:26 by msariasl          #+#    #+#             */
-/*   Updated: 2023/02/19 09:23:00 by ali              ###   ########.fr       */
+/*   Updated: 2023/02/20 13:34:17 by msariasl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,10 @@ void	add_first(t_stack **start, int value)
 		(*start) = new;
 	}
 	else
+	{
 		*start = new;
+		(*start)->next = 0;
+	}
 }
 
 void	add_last(t_stack **start, int value)
@@ -82,6 +85,7 @@ void	add_last(t_stack **start, int value)
 
 	new = (t_stack *)malloc(sizeof(t_stack));
 	new->value = value;
+	new->next = 0;
 	if (*start)
 	{
 		temp = *start;

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   tequila_sort.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: msariasl <msariasl@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ali <ali@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 20:29:47 by ali               #+#    #+#             */
-/*   Updated: 2023/02/20 13:29:31 by msariasl         ###   ########.fr       */
+/*   Updated: 2023/02/21 21:57:57 by ali              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -127,33 +127,95 @@ static int	find_sum(t_stack *my_stack)
 
 void	tequila_sort(t_stack **a_stack, t_stack **b_stack)
 {
-	int min = find_min(*a_stack);
-	int max = find_max(*a_stack);
-	int sum = find_sum(*a_stack);
-	int count = stack_counter(a_stack);
-	int average = (sum / count);
-
-	int above = find_above(*a_stack, average, 0);
-	int below = find_below(*a_stack, average, 0);
-
-	mrintf("min:%d max:%d count:%d sum:%d\n", min, max, count, sum);
-	mrintf("average:%d above:%d below:%d\n", average, above, below);
-
-	int i = stack_counter(a_stack);
+	int average;
+	int average_ab;
+	int count_ab;
+	int transfer;
+	int i;
+	
+	
+	average = find_sum(*a_stack) / stack_counter(a_stack);
+	i = stack_counter(a_stack);
+	mrintf("1. count:%d average:%d below:%d above:%d\n",i,average,find_below(*a_stack,average,0),find_above(*a_stack,average,1));
 	while (i)
 	{
-		if ((*a_stack)->value > average)
+		if ((*a_stack)->value >= average)
 			list_pb(a_stack, b_stack);
-		list_ra(a_stack);
+		else
+			list_ra(a_stack);
 		i--;
 	}
 
-	while (!if_sorted(*a_stack))
+	average_ab = find_sum(*a_stack) / stack_counter(a_stack);
+	count_ab = stack_counter(a_stack);
+	mrintf("1/2. count_ab:%d average_ab:%d below:%d above:%d\n",count_ab,average_ab,find_below(*a_stack,average_ab,1),find_above(*a_stack,average_ab,0));
+	
+	transfer = 0;
+	average = find_sum(*b_stack) / stack_counter(b_stack);
+	i = stack_counter(b_stack);
+	mrintf("3. count:%d average:%d below:%d above:%d\n",i,average,find_below(*a_stack,average,0),find_above(*a_stack,average,1));
+	while(i)
 	{
-		if ((*a_stack)->value > (*a_stack)->next->value)
-			list_sa(a_stack);
-
-		else if (!if_sorted(*a_stack))
-			list_ra(a_stack);
+		if((*b_stack)->value <= average)
+		{
+			list_pa(a_stack,b_stack);
+			transfer++;
+		}
+		else
+			list_rb(b_stack);
+		i--;
 	}
+
+	average = find_sum(*b_stack) / stack_counter(b_stack);
+	i = stack_counter(b_stack);
+	mrintf("4. count:%d average:%d below:%d above:%d\n",i,average,find_below(*a_stack,average,0),find_above(*a_stack,average,1));
+
+	while(transfer)
+	{
+		list_ra(a_stack);
+		transfer--;
+	}
+
+	while(count_ab)
+	{
+		if ((*a_stack)->value <= average_ab)
+		{
+			list_pb(a_stack, b_stack);
+			transfer++;
+		}
+		else
+			list_ra(a_stack);
+		count_ab--;
+	}
+
+	i = 0;
+	while(transfer)
+	{
+		list_rb(b_stack);
+		transfer--;
+		i++;
+	}
+
+	while(i)
+	{
+		list_pa(a_stack,b_stack);
+		transfer++;
+		i--;
+	}
+
+	while(transfer)
+	{
+		list_pa(a_stack,b_stack);
+		list_ra(a_stack);
+		transfer--;
+	}
+
+	
+
+	
+
+	
+
+	
+	
 }

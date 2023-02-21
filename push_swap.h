@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: msariasl <msariasl@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ali <ali@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 00:11:33 by ali               #+#    #+#             */
-/*   Updated: 2023/02/20 13:36:39 by msariasl         ###   ########.fr       */
+/*   Updated: 2023/02/21 20:56:24 by ali              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 # endif
 
 # ifndef SHOW_RESULT
-#  define SHOW_RESULT 0
+#  define SHOW_RESULT 1
 # endif
 
 # include <stdarg.h>

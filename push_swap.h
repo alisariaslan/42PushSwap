@@ -6,7 +6,7 @@
 /*   By: ali <ali@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 00:11:33 by ali               #+#    #+#             */
-/*   Updated: 2023/02/22 00:41:52 by ali              ###   ########.fr       */
+/*   Updated: 2023/02/23 01:37:00 by ali              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 # define PUSH_SWAP_H
 
 # ifndef SHOW_MOVES
-#  define SHOW_MOVES 1
+#  define SHOW_MOVES 0
 # endif
 
 # ifndef SHOW_RESULT
-#  define SHOW_RESULT 0
+#  define SHOW_RESULT 1
 # endif
 
 # include <stdarg.h>
@@ -82,5 +82,6 @@ int							if_sorted(t_stack *my_stack);
 
 void						amel_sort(t_stack **a_stack, t_stack **b_stack);
 void						tequila_sort(t_stack **a_stack, t_stack **b_stack);
+char						**convert_multiple(char *str, int *argc);
 
 #endif

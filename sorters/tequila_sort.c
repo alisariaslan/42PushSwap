@@ -6,7 +6,7 @@
 /*   By: ali <ali@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 20:29:47 by ali               #+#    #+#             */
-/*   Updated: 2023/02/22 00:41:16 by ali              ###   ########.fr       */
+/*   Updated: 2023/02/23 01:03:04 by ali              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -141,7 +141,7 @@ static void	phase_one(t_stack **a_stack, t_stack **b_stack, int average, int i)
 	}
 }
 
-static void	phase_two(t_stack **a_stack, t_stack **b_stack, int *transfer)
+static void	phase_two(t_stack **a_stack, t_stack **b_stack)
 {
 	int	i;
 	int	average;
@@ -153,63 +153,55 @@ static void	phase_two(t_stack **a_stack, t_stack **b_stack, int *transfer)
 		if ((*b_stack)->value >= average)
 		{
 			list_pa(a_stack, b_stack);
-			(*transfer)++;
+			list_ra(a_stack);
 		}
 		else
 			list_rb(b_stack);
 		i--;
-	}
-	while (*transfer)
-	{
-		list_ra(a_stack);
-		(*transfer)--;
 	}
 }
 
 static void	phase_three(t_stack **a_stack, t_stack **b_stack, int transfer,
 		int i)
 {
-	while (transfer)
+	while (transfer > 0)
 	{
-		list_rb(b_stack);
+		list_pa(a_stack, b_stack);
 		transfer--;
 		i++;
 	}
-	while (i)
-	{
-		list_pa(a_stack, b_stack);
-		transfer++;
-		i--;
-	}
-	while (transfer)
+	while (i - 1 > 0)
 	{
 		list_pa(a_stack, b_stack);
 		list_ra(a_stack);
-		transfer--;
+		i--;
 	}
+	while (stack_counter(b_stack) > 0)
+		list_pa(a_stack, b_stack);
 }
 
 void	tequila_sort(t_stack **a_stack, t_stack **b_stack)
 {
 	int	average;
 	int	count;
+	int	count_b;
 	int	transfer;
 
 	phase_one(a_stack, b_stack, 0, 0);
 	average = find_sum(*a_stack) / stack_counter(a_stack);
 	count = stack_counter(a_stack);
-	transfer = 0;
-	phase_two(a_stack, b_stack, &transfer);
+	phase_two(a_stack, b_stack);
+	count_b = stack_counter(b_stack);
 	while (count)
 	{
 		if ((*a_stack)->value >= average)
 		{
 			list_pb(a_stack, b_stack);
-			(transfer)++;
+			list_rb(b_stack);
 		}
 		else
 			list_ra(a_stack);
 		count--;
 	}
-	phase_three(a_stack, b_stack, transfer, 0);
+	phase_three(a_stack, b_stack, count_b, 0);
 }

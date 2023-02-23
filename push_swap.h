@@ -6,7 +6,7 @@
 /*   By: ali <ali@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 00:11:33 by ali               #+#    #+#             */
-/*   Updated: 2023/02/23 01:37:00 by ali              ###   ########.fr       */
+/*   Updated: 2023/02/24 00:15:05 by ali              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define PUSH_SWAP_H
 
 # ifndef SHOW_MOVES
-#  define SHOW_MOVES 0
+#  define SHOW_MOVES 1
 # endif
 
 # ifndef SHOW_RESULT

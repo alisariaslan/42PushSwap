@@ -6,7 +6,7 @@
 /*   By: ali <ali@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 12:02:07 by msariasl          #+#    #+#             */
-/*   Updated: 2023/02/23 01:33:27 by ali              ###   ########.fr       */
+/*   Updated: 2023/02/24 00:11:03 by ali              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,20 +29,23 @@ static void	clear_stack(t_stack **stack)
 
 static void	clear_argv(char ***argv, int single_arg)
 {
-	int	i;
+	int		i;
+	int		z;
+	void	*adr;
 
+	z = 0;
 	if (single_arg && *argv)
 	{
 		i = 0;
 		while ((*argv)[i])
 			i++;
-		while (i)
+		while (i > 0)
 		{
 			free((*argv)[i]);
-			(*argv)[i] = 0;
+			z++;
 			i--;
 		}
-		free((*argv)[i]);
+		free(*argv);
 	}
 }
 

@@ -39,9 +39,10 @@ static void	clear_argv(char ***argv, int single_arg)
 		while (i)
 		{
 			free((*argv)[i]);
+			(*argv)[i] = 0;
 			i--;
 		}
-		free((*argv));
+		free((*argv)[i]);
 	}
 }
 

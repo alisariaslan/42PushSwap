@@ -78,7 +78,6 @@ static void	pass_numbers(char *str, char ***ntable)
 char	**convert_multiple(char *str, int *argc)
 {
 	int nc = count_numbers(str);
-	mrintf("nc:%d",nc);
 	if (nc > 1)
 	{
 		(*argc) = 0;

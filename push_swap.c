@@ -6,7 +6,7 @@
 /*   By: ali <ali@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 12:02:07 by msariasl          #+#    #+#             */
-/*   Updated: 2023/02/24 00:11:03 by ali              ###   ########.fr       */
+/*   Updated: 2023/02/24 00:45:21 by ali              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,8 @@ int	main(int argc, char **argv)
 	listwrite(a_stack, b_stack);
 	if (!if_sorted(a_stack))
 	{
-		tequila_sort(&a_stack, &b_stack);
+		if (stack_counter(&a_stack) > 30)
+			tequila_sort(&a_stack, &b_stack);
 		amel_sort(&a_stack, &b_stack);
 	}
 	listwrite(a_stack, b_stack);

@@ -6,7 +6,7 @@
 /*   By: ali <ali@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 09:56:45 by ali               #+#    #+#             */
-/*   Updated: 2023/02/23 00:34:10 by ali              ###   ########.fr       */
+/*   Updated: 2023/02/25 09:21:27 by ali              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,6 @@ int	if_sorted(t_stack *my_stack)
 
 static void	sort_phase_one(t_stack **a_stack, t_stack **b_stack, int shift)
 {
-	t_stack	*next;
-
 	if ((*a_stack)->value > (*a_stack)->next->value)
 	{
 		list_sa(a_stack);
@@ -61,7 +59,7 @@ static void	sort_phase_one(t_stack **a_stack, t_stack **b_stack, int shift)
 	}
 }
 
-static void	sort_phase_two(t_stack **a_stack, t_stack **b_stack, int shift)
+static void	sort_phase_two(t_stack **a_stack, t_stack **b_stack)
 {
 	list_pa(a_stack, b_stack);
 }
@@ -76,6 +74,6 @@ void	amel_sort(t_stack **a_stack, t_stack **b_stack)
 	while (stack_counter(b_stack) > 0)
 	{
 		if (*b_stack)
-			sort_phase_two(a_stack, b_stack, 0);
+			sort_phase_two(a_stack, b_stack);
 	}
 }

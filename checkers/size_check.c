@@ -6,7 +6,7 @@
 /*   By: ali <ali@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/10 21:33:08 by ali               #+#    #+#             */
-/*   Updated: 2023/02/14 00:38:07 by ali              ###   ########.fr       */
+/*   Updated: 2023/02/25 09:18:50 by ali              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 int	size_check(int argc, char **argv)
 {
 	int	i;
-	int	value;
 
 	i = 1;
 	argc--;
@@ -31,7 +30,6 @@ int	size_check(int argc, char **argv)
 			writemy("Error: Some values smaller than integers.\n");
 			return (0);
 		}
-		value = matoi(argv[i]);
 		i++;
 	}
 	return (1);

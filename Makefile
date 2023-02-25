@@ -1,7 +1,7 @@
 NAME = push_swap
 FILES = $(shell find . -name "*.c")
 HEADERS = $(shell find . -name "*.h")
-ARGS........................................ = -Wall -Wextra -Werror
+ARGS = -Wall -Wextra -Werror
 
 $(NAME): $(FILES) $(HEADERS)
 	gcc $(ARGS) -c $(FILES) $(HEADERS)
@@ -12,10 +12,12 @@ all:
 
 clean:
 	rm -rf *.o
+	rm -rf *.gch
+	rm -rf *.rpt
+	rm -rf *.out
 
 fclean:
 	make clean
-	rm -rf *.gch
 	rm -rf $(NAME)
 
 re:
@@ -25,7 +27,6 @@ re:
 release:
 	make re
 	make clean
-	rm -rf *.gch
 
 n:
 	clear

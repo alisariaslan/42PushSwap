@@ -6,7 +6,7 @@
 /*   By: ali <ali@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 20:29:47 by ali               #+#    #+#             */
-/*   Updated: 2023/02/23 01:03:04 by ali              ###   ########.fr       */
+/*   Updated: 2023/02/25 09:20:11 by ali              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -185,7 +185,6 @@ void	tequila_sort(t_stack **a_stack, t_stack **b_stack)
 	int	average;
 	int	count;
 	int	count_b;
-	int	transfer;
 
 	phase_one(a_stack, b_stack, 0, 0);
 	average = find_sum(*a_stack) / stack_counter(a_stack);

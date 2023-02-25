@@ -6,7 +6,7 @@
 /*   By: ali <ali@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/10 21:16:29 by ali               #+#    #+#             */
-/*   Updated: 2023/02/18 18:36:21 by ali              ###   ########.fr       */
+/*   Updated: 2023/02/25 09:19:37 by ali              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,17 @@
 
 void	writechar(char c)
 {
-	int	k;
-
-	k = write(1, &c, 1);
+	write(1, &c, 1);
 }
 
 void	writemy(char *s)
 {
 	int	i;
-	int	k;
 
 	i = 0;
 	while (s[i])
 		i++;
-	k = write(1, s, i);
+	write(1, s, i);
 }
 
 static char	*getspaces(int val, char *spaces)

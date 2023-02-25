@@ -6,7 +6,7 @@
 /*   By: ali <ali@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 12:02:07 by msariasl          #+#    #+#             */
-/*   Updated: 2023/02/24 00:45:21 by ali              ###   ########.fr       */
+/*   Updated: 2023/02/25 09:17:54 by ali              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ static void	clear_argv(char ***argv, int single_arg)
 {
 	int		i;
 	int		z;
-	void	*adr;
 
 	z = 0;
 	if (single_arg && *argv)
@@ -70,7 +69,6 @@ int	main(int argc, char **argv)
 	int		single_arg;
 	t_stack	*a_stack;
 	t_stack	*b_stack;
-	int		i;
 
 	if (argv_fighter(&argc, &single_arg, &argv))
 		return (0);
